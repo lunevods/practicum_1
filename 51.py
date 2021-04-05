@@ -1,29 +1,26 @@
 """
 Имя проекта: practicum-1
 Номер версии: 1.0
-Имя файла: 51.py
+Имя файла: 49.py
 Автор: 2020 © Д.Л Иоффе, Челябинск
 Лицензия использования:  CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/deed.ru)
 Дата создания: 17/12/2020
 Дата последней модификации: 17/12/2020
 Связанные файлы/пакеты: min,max
 Описание: Решение задачи №№ 51
+Заданы M строк символов, которые вводятся с клавиатуры. Найти количество символов в самой длинной строке. Выровнять строки по самой длинной строке, поставив перед каждой строкой соответствующее количество звёздочек.
 #версия Python: 3.9.1
 """
-M = int(input("Введите количество строк: "))
-x = []
-for i in range(0, M):
-    print("Введите строку:",  end=' ')
-    x.append(input())
-maxx= 0
-for y in x:
-    d = len(y)
-    if d > maxx:
-        maxx = d
-print("Максимальная длина строки:", maxx)
-for y in x:
-    d = len(y)
-    if d < maxx:
-        for i in range(0, maxx - d):
-            y = '*' + y
-    print(y)
+A = [A * 3 for A in 'abc']
+print(A)
+B = ['Hello', 'world!', 'qwe']
+print(B)
+list.sort(B, key=len)
+print(B)
+
+for i in range(len(B)):
+    if len(B[i]) < len(B[i+1]):
+        list.insert(0, '*')
+        i = i + 1
+        
+print(B)
